@@ -10,7 +10,9 @@ class ButtonsPanel extends React.Component {
   render() {
     return (
       <div className="buttons">
-        <button onClick={this.props.changeCounterValue}>Add {this.props.stepCount}</button>
+        <button onClick={this.props.changeCounterValue}>
+          Add {this.props.stepCount}
+        </button>
         <button onClick={() => this.resetOrReinitCounter(false)}>Reinit</button>
         <button onClick={() => this.resetOrReinitCounter(true)}>Reset</button>
       </div>

@@ -16,18 +16,18 @@ class Counter extends React.Component {
         counterValue: this.props.initValue,
         counterStep: this.props.stepCount
       };
-
     }
   }
 
-  updateStep = (step) => {
-    this.setState({ counterStep: step })
-  }
+  updateStep = step => {
+    this.setState({ counterStep: step });
+  };
 
   changeValue = () => {
-
     this.setState(prevState => {
-      return { counterValue: prevState.counterValue + parseInt(this.state.counterStep) };
+      return {
+        counterValue: prevState.counterValue + parseInt(this.state.counterStep)
+      };
     });
   };
 
@@ -49,15 +49,20 @@ class Counter extends React.Component {
   render() {
     return (
       <div className="counter">
-        <div className="inner-counter">Licznik:
-        <span className="value">{this.state.counterValue}</span></div>
+        <div className="inner-counter">
+          Licznik:
+          <span className="value">{this.state.counterValue}</span>
+        </div>
         <ButtonsPanel
           stepCount={this.state.counterStep}
           changeCounterValue={this.changeValue}
           resetCounterValue={this.resetCounter}
         />
-        <CounterStep updateStep={this.updateStep} stepCount={this.state.counterStep} />
-      </div >
+        <CounterStep
+          updateStep={this.updateStep}
+          stepCount={this.state.counterStep}
+        />
+      </div>
     );
   }
 }

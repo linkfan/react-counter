@@ -8,17 +8,23 @@ class CounterStep extends React.Component {
   }
 
   changeStep = () => {
-    let step = this.numberInput.current.value
+    let step = this.numberInput.current.value;
     this.props.updateStep(step);
-  }
+  };
 
   render() {
     return (
       <div className="step">
         <span>Krok:</span>
-        <input type="number" value={this.props.stepCount} ref={this.numberInput} onChange={this.changeStep} />
+        <input
+          type="number"
+          min="1"
+          value={this.props.stepCount}
+          ref={this.numberInput}
+          onChange={this.changeStep}
+        />
       </div>
-    )
+    );
   }
 }
 
