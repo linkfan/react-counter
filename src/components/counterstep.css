@@ -1,0 +1,11 @@
+.step {
+    text-align: center
+}
+
+.step input {
+    width: 50px
+}
+.step span {
+    color: blue;
+    margin-right: 10px;
+}
