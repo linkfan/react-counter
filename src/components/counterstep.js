@@ -2,13 +2,15 @@ import React from "react";
 import "./counterstep.css";
 
 class CounterStep extends React.Component {
-  constructor(props) {
-    super(props);
-    this.numberInput = React.createRef();
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.numberInput = React.createRef();
+  // }
 
-  changeStep = () => {
-    let step = this.numberInput.current.value;
+  changeStep = event => {
+    //console.log(event.target.value);
+    //let step = this.numberInput.current.value;
+    let step = event.target.value;
     this.props.updateStep(step);
   };
 
@@ -20,7 +22,7 @@ class CounterStep extends React.Component {
           type="number"
           min="1"
           value={this.props.stepCount}
-          ref={this.numberInput}
+          //ref={this.numberInput}
           onChange={this.changeStep}
         />
       </div>
